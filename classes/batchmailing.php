@@ -5,7 +5,7 @@ namespace local_batchmailing;
 require_once __DIR__.'/util/constants.php';
 require_once __DIR__.'/batch/constant_batchsize.php';
 
-use batchmailing\util\Constants;
+use local_batchmailing\util\Constants;
 use local_batchmailing\batch\ConstantBatchsize;
 
 class Batchmailing {

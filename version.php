@@ -24,6 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version  = 2018010015;
+$plugin->version  = 2018010016;
 $plugin->requires = 2010112400;
 $plugin->component = 'local_batchmailing';
