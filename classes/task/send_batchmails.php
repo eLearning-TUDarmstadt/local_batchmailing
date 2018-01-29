@@ -20,7 +20,7 @@ class send_batchmails extends \core\task\scheduled_task {
     }
     
     public function get_name() {
-        return get_string('crontask','batchmailing');
+        return get_string('crontask','local_batchmailing');
     }
 
     public function execute() {
