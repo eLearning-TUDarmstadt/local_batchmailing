@@ -22,9 +22,7 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($hassiteconfig) {
     
-    require_once __DIR__.'/version.php';
-    
-    $component = $plugin->component;
+    $component = 'local_batchmailing';
     $plugintitle = get_string('plugintitle', $component);
     $numberOfMessages = get_string('numberofmessages', $component);
     $numberOfMessagesDesc = get_string('numberofmessages_description', $component);
