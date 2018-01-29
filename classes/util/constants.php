@@ -1,6 +1,6 @@
 <?php
 
-namespace batchmailing\util;
+namespace local_batchmailing\util;
 
 class Constants {
     

@@ -1,12 +1,12 @@
 <?php
 
-namespace batchmailing\task;
+namespace local_batchmailing\task;
 
-use batchmailing\Batchmailing;
-use batchmailing\batch\ConstantBatchsize;
+require_once __DIR__.'/../classes/batch/constant_batchsize.php';
+require_once __DIR__.'/../classes/batchmailing.php';
 
-require_once __DIR__.'/../batch/constant_batchsize.php';
-require_once __DIR__.'/../batchmailing.php';
+use local_batchmailing\Batchmailing;
+use local_batchmailing\batch\ConstantBatchsize;
 
 class send_batchmails extends \core\task\scheduled_task {
 

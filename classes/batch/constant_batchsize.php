@@ -1,6 +1,6 @@
 <?php
 
-namespace batchmailing\batch;
+namespace local_batchmailing\batch;
 
 require_once __DIR__.'/batchsize.php';
 

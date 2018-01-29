@@ -1,6 +1,6 @@
 <?php
 
-namespace batchmailing\batch;
+namespace local_batchmailing\batch;
 
 interface Batchsize {
     public function next();

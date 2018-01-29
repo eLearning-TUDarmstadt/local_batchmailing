@@ -1,6 +1,6 @@
 <?php
 
-namespace batchmailing\recipients;
+namespace local_batchmailing\recipients;
 
 require_once __DIR__.'/recipient_list.php';
 

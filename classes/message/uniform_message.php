@@ -1,6 +1,6 @@
 <?php
 
-namespace batchmailing\message;
+namespace local_batchmailing\message;
 
 require_once __DIR__.'/message_creator.php';
 require_once __DIR__.'/message.php';

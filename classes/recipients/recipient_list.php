@@ -1,6 +1,6 @@
 <?php
 
-namespace batchmailing\recipients;
+namespace local_batchmailing\recipients;
 
 interface RecipientList {
     

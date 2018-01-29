@@ -1,14 +1,16 @@
 <?php
 
-namespace batchmailing\message;
+namespace local_batchmailing\message;
 
-use batchmailing\util\Constants;
+require_once __DIR__.'/../util/constants.php';
+
+use local_batchmailing\util\Constants;
 
 class Message {
     
     public $component         = Constants::component;
     public $eventtype         = Constants::eventType;
-    public $contexturl 	   = Constants::contextUrl;
+    public $contexturl 	      = Constants::contextUrl;
     public $contexturlname    = Constants::contexturlname;
     public $smallmessage      = "";
     public $notification      = '0';
