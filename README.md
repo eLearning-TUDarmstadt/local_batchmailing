@@ -1,0 +1,3 @@
+# moodle-local_batchmailing
+
+
