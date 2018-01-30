@@ -4,7 +4,9 @@ namespace local_batchmailing;
 
 require_once __DIR__.'/util/constants.php';
 require_once __DIR__.'/batch/constant_batchsize.php';
+require_once __DIR__.'/message/message.php';
 
+use local_batchmailing\message\Message;
 use local_batchmailing\util\Constants;
 use local_batchmailing\batch\ConstantBatchsize;
 
@@ -25,8 +27,10 @@ class Batchmailing {
     public function sendNextBatch() {
         
         $messages = $this->getNextBatch();
+        $count = count($messages);
+        echo 'send next '.$count.' messages';
         foreach($messages as $message) {
-            message_send($message);
+            message_send(Message::coreMessage($message));
         }
     }
     

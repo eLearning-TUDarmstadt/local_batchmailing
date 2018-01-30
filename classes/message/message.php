@@ -7,7 +7,7 @@ require_once __DIR__.'/../util/constants.php';
 use local_batchmailing\util\Constants;
 
 class Message {
-    
+
     public $component         = Constants::component;
     public $eventtype         = Constants::eventType;
     public $contexturl 	      = Constants::contextUrl;
@@ -37,5 +37,35 @@ class Message {
         $this->fullmessageformat = $format;
         $this->timecreated       = time();
     }
+    
+    static function coreMessage($object) {
+        
+        global $USER;
+        
+        $message = new \core\message\message();
+        $message->component = $object->component;
+        $message->name = $object->eventtype;
+        
+        $message->userfrom = $USER;
+        $message->userto = \core_user::get_user($object->useridto);
+        $message->userto->emailstop = 0;
+        
+        $message->subject = $object->subject;
+        $message->fullmessage = $object->fullmessage;
+        $message->fullmessageformat = FORMAT_HTML;
+        $message->fullmessagehtml = $object->fullmessagehtml;
+        $message->smallmessage = $object->smallmessage;
+        $message->notification = $object->notification;
+        
+        $message->contexturl = $object->contexturl;
+        $message->contexturlname = $object->contexturlname;
+        $message->replyto = $object->replyTo;
+        
+        return $message;
+        
+    }
+    
+    
+    
     
 }
