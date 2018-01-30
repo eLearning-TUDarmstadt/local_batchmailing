@@ -6,6 +6,7 @@ require_once __DIR__.'/util/constants.php';
 require_once __DIR__.'/batch/constant_batchsize.php';
 require_once __DIR__.'/message/message.php';
 
+use Exception;
 use local_batchmailing\message\Message;
 use local_batchmailing\util\Constants;
 use local_batchmailing\batch\ConstantBatchsize;
@@ -28,13 +29,29 @@ class Batchmailing {
         
         $messages = $this->getNextBatch();
         $count = count($messages);
-        echo 'send next '.$count.' messages';
+        echo "send next ".$count." messages \r\n";
         foreach($messages as $message) {
             message_send(Message::coreMessage($message));
+            $this->deleteMessage($message);
         }
     }
     
+    /**
+     * Delete message from temporary storage 
+     * @param object $message
+     * @return void
+     * **/
+    private function deleteMessage($message) {
+        
+        global $DB;
+        echo "delete message with id ".$message->id."\r\n";
+        $DB->delete_records('message', array('id' => $message->id));
+    }
     
+    /**
+     * Stores messages temporarily in moodle message table 
+     * @param object $messages
+     */
     public function saveMessages($messages) {
         global $DB;
         

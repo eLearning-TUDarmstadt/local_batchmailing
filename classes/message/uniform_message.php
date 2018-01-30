@@ -8,7 +8,7 @@ require_once __DIR__.'/message.php';
 class UniformMessage implements MessageCreator {
     
     public function __construct($subject, $content, $replyTo) {
-        $this->subject = $subject;
+        $this->subject = "=?utf-8?b?".base64_encode($subject)."?=";
         $this->content = $content;
         $this->replyTo = $replyTo;
     }
