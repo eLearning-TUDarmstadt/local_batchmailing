@@ -11,4 +11,4 @@ $string['plugintitle'] = 'Batchmailing';
 $string['messageprovider:batchmailingnotification'] = 'Stapelbenachrichtigung';
 $string['crontask'] = 'Sendet Nachrichten stapelweise';
 $string['numberofmessages'] = 'Anzahl der Nachrichten';
-$string['numberofmessages_description'] = 'Anzahl der zu verschickenden Nachrichten pro Taskausführung';
+$string['numberofmessages_description'] = 'Anzahl der zu verschickenden Nachrichten pro Taskausfuehrung';
